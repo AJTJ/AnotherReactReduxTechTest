@@ -1,11 +1,20 @@
-import React, {Component} from 'react';
-import Button from './Button';
-export default class HomeContent extends Component {
-  render() {
-    return (
-      <div>
-        <Button>Login</Button>
-      </div>
-    );
-  }
-}
+import React from "react";
+import Button from "./Button";
+
+import PropTypes from "prop-types";
+
+const HomeContent = props => {
+  let { changeLogin, loggedIn } = props;
+  return (
+    <div>
+      <Button onClick={changeLogin}>{loggedIn ? "Logout" : "Login"}</Button>
+    </div>
+  );
+};
+
+HomeContent.propTypes = {
+  changeLogin: PropTypes.func,
+  loggedIn: PropTypes.bool
+};
+
+export default HomeContent;
