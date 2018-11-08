@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import { store } from "./store";
+import UserList from "./routes/UserList";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <div>
         <Route exact path="/" component={Landing} />
         <Route path="/home" component={Home} />
+        <Route path="/userList" component={UserList} />
       </div>
     </BrowserRouter>
   </Provider>,
